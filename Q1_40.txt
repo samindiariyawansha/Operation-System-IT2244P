@@ -1,0 +1,57 @@
+Read three numbers (a , b,c) from the users and the store then into three variables,
+Find the least common multiple (LCM) from  the two numbers(a,b) and find greatest common deviser (GCD) for the second two numbers(b,c)
+----------------------------------------------------------------
+
+
+
+echo "Enter the first number (a): " 
+read a
+echo "Enter the second number (b): " 
+read b
+echo "Enter the third number (c): " 
+read c
+
+gcd() {
+    local x=$1
+    local y=$2
+    while [ $y -ne 0 ]; 
+	do
+        temp=$y
+        y=$((x % y))
+        x=$temp
+    done
+    echo $x
+}
+
+lcm() {
+    local x=$1
+    local y=$2
+    
+local gcd_value=$(gcd $x $y)
+    echo $(( (x * y) / gcd_value ))
+}
+
+
+lcm_ab=$(lcm $a $b)
+echo "LCM of $a and $b is $lcm_ab"
+
+gcd_bc=$(gcd $b $c)
+echo "GCD of $b and $c is $gcd_bc"
+
+
+
+------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ vi Q1_40.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 Q1_40.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./Q1_40.sh
+Enter the first number (a):
+8
+Enter the second number (b):
+6
+Enter the third number (c):
+2
+LCM of 8 and 6 is 24
+GCD of 6 and 2 is 2
+[samindi@DESKTOP-FSBHM1J ~]$
+
