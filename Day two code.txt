@@ -1,0 +1,156 @@
+//create a file
+[samindi@DESKTOP-FSBHM1J ~]$ vi test.csv
+
+------------------------------------------------------------
+
+//display the contents of test.csv one pageat a time
+[samindi@DESKTOP-FSBHM1J ~]$ more test.csv
+aa,55,66,77
+bb,11,44,55
+cc,22,33,11
+dd,45,65,21
+ee,87,96,25
+ff,44,55,66
+
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ less test.csv
+-bash: less: command not found
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ cut -d, -f1,2 test.csv
+aa,55
+bb,11
+cc,22
+dd,45
+ee,87
+ff,44
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ cut -d, -f1,3 test.csv
+aa,66
+bb,44
+cc,33
+dd,65
+ee,96
+ff,55
+------------------------------------------------------------
+[samindi@DESKTOP-FSBHM1J ~]$ cut -d, -f2 test.csv
+55
+11
+22
+45
+87
+44
+
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ head -3 test.csv
+aa,55,66,77
+bb,11,44,55
+cc,22,33,11
+
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ tail -3 test.csv
+dd,45,65,21
+ee,87,96,25
+ff,44,55,66
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ cut -d, -f1,2 test.csv > test1.csv
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ ls test.csv test1.csv
+test.csv  test1.csv
+
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ more test1.csv
+aa,55
+bb,11
+cc,22
+dd,45
+ee,87
+ff,44
+------------------------------------------------------------
+[samindi@DESKTOP-FSBHM1J ~]$ wc -l test1.csv
+6 test1.csv
+
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ head -3 test.csv >> test2.csv
+[samindi@DESKTOP-FSBHM1J ~]$ more test2.csv
+aa,55,66,77
+bb,11,44,55
+cc,22,33,11
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ cut -d, -f1,2 test.csv >> test3.csv
+[samindi@DESKTOP-FSBHM1J ~]$ more test3.csv
+aa,55
+bb,11
+cc,22
+dd,45
+ee,87
+ff,44
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ awk -F, '{print$1}' test.csv
+aa
+bb
+cc
+dd
+ee
+ff
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ awk -F, '{print$3}' test.csv
+66
+44
+33
+65
+96
+55
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ ls
+test.csv  test1.csv  test2.csv  test3.csv
+
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ ls -ltr
+total 16
+-rw-r--r-- 1 samindi samindi  0 Mar 25 14:20 new.txt
+-rw-r--r-- 1 samindi samindi 72 Apr  1 22:18 test.csv
+-rw-r--r-- 1 samindi samindi 36 Apr  1 22:21 test1.csv
+-rw-r--r-- 1 samindi samindi 36 Apr  1 22:25 test2.csv
+-rw-r--r-- 1 samindi samindi 36 Apr  1 22:25 test3.csv
+
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ find *.csv
+test.csv
+test1.csv
+test2.csv
+test3.csv
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 444 test.csv
+[samindi@DESKTOP-FSBHM1J ~]$ ls -ltr
+total 16
+-rw-r--r-- 1 samindi samindi  0 Mar 25 14:20 new.txt
+-r--r--r-- 1 samindi samindi 72 Apr  1 22:18 test.csv
+-rw-r--r-- 1 samindi samindi 36 Apr  1 22:21 test1.csv
+-rw-r--r-- 1 samindi samindi 36 Apr  1 22:25 test2.csv
+-rw-r--r-- 1 samindi samindi 36 Apr  1 22:25 test3.csv
+------------------------------------------------------------
+
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 744 test.csv
+[samindi@DESKTOP-FSBHM1J ~]$ ls -ltr
+total 16
+-rw-r--r-- 1 samindi samindi  0 Mar 25 14:20 new.txt
+-rwxr--r-- 1 samindi samindi 72 Apr  1 22:18 test.csv
+-rw-r--r-- 1 samindi samindi 36 Apr  1 22:21 test1.csv
+-rw-r--r-- 1 samindi samindi 36 Apr  1 22:25 test2.csv
+-rw-r--r-- 1 samindi samindi 36 Apr  1 22:25 test3.csv

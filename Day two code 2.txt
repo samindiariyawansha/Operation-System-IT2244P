@@ -1,0 +1,23 @@
+Microsoft Windows [Version 10.0.22631.4602]
+(c) Microsoft Corporation. All rights reserved.
+
+
+
+// create a file
+C:\Users\Samindi Ariyawansha>dir >abc.txt
+
+
+// Adds the Read-only attribute to abc.txt
+C:\Users\Samindi Ariyawansha>ATTRIB +R abc.txt
+
+
+// Removes the Read-only attribute from abc.txt
+C:\Users\Samindi Ariyawansha>ATTRIB -R abc.txt
+
+
+// Adds the Hidden attribute to abc.txt
+C:\Users\Samindi Ariyawansha>ATTRIB +H abc.txt
+
+
+// Removes the Hidden attribute to abc.txt
+C:\Users\Samindi Ariyawansha>ATTRIB -H abc.txt
