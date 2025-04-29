@@ -1,0 +1,238 @@
+Q1)Get the calender and date
+
+[samindi@DESKTOP-FSBHM1J ~]$ cal
+-bash: cal: command not found
+
+[samindi@DESKTOP-FSBHM1J ~]$ date
+Tue Apr 29 16:37:49 +0530 2025
+
+
+
+
+
+
+Q2)Get the student name and marks for the 3 subjects from user then calculate the "Total" and "Average" 
+	output:-
+		Enter the name:-sawi
+		Enter the mark for subject1:89
+		Enter the mark for subject2:78
+		Enter the mark for subject3:99
+		
+**************************************************
+echo "Enter the name:"
+read name
+echo "Enter the mark for subject1"
+read x
+echo "Enter the mark for subject2"
+read y
+echo "Enter the mark for subject1"
+read z
+sum=$(($x+$y+$z))
+avg=$(($sum/3))
+echo "Enter the name:" $name
+echo "Summation " $sum
+echo "Average   " $avg
+
+**************************************************	
+[samindi@DESKTOP-FSBHM1J ~]$ vi a.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 a.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./a.sh
+Enter the name:
+sawi
+Enter the mark for subject1
+89
+Enter the mark for subject2
+78
+Enter the mark for subject1
+99
+Enter the name: sawi
+Summation  266
+Average    88
+
+		
+		
+		
+		
+		
+Q3)Create calculator with arithmetic operators.
+   output:-
+			Enter the first number: 6
+			Enter the second number: 4
+			Summation: 10
+			Substraction: 2
+			Division: 1
+			Multiplication: 24
+
+**************************************************
+echo "Enter the first number"
+read a
+echo "Enter the second number"
+read b
+sum=$(($a+$b))
+sub=$(($a-$b))
+div=$(($a/$b))
+mul=$(($a*$b))
+
+echo "Summation      " $sum
+echo "Substraction   " $sub
+echo "Division       " $div
+echo "Multiplication " $mul
+
+**************************************************		
+[samindi@DESKTOP-FSBHM1J ~]$ vi b.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 b.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./b.sh
+Enter the first number
+6
+Enter the second number
+4
+Summation       10
+Substraction    2
+Division        1
+Multiplication  24
+
+
+
+
+
+
+			
+Q4)Get the days based on the user input number
+	output:-
+		Enter the number: 5
+		Friday
+
+**************************************************
+echo "Enter a number (1-7) for the day"
+read dayNumber
+case $dayNumber in
+  1)echo "Monday";;
+  2)echo "Tuesday";;
+  3)echo "Wednesday";;
+  4)echo "Thursday";;
+  5)echo "Friday";;
+  6)echo "Saturday";;
+  7)echo "Sunday";;
+  *)echo "Invalid input. Please enter a number between 1 and 7.";;
+esac
+**************************************************		
+[samindi@DESKTOP-FSBHM1J ~]$ vi c.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 c.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./c.sh
+Enter a number (1-7) for the day
+5
+Friday
+
+
+
+
+
+Q5)Verify whether your user name is correct or not.(use your name as a 
+	output:-
+		Enter user name:
+		Mino
+		User name is correct
+		Enter user name:
+		Mino
+		User name is incorrect
+		
+**************************************************		
+correctUsername="Mino"
+read -p "Enter user name: " enteredUsername
+if [ "$enteredUsername" == "$correctUsername" ]; then
+    echo "User name is correct"
+else
+    echo "User name is incorrect"
+fi
+**************************************************		
+		
+[samindi@DESKTOP-FSBHM1J ~]$ vi d.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 d.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./d.sh
+Enter user name: mino
+User name is incorrect
+[samindi@DESKTOP-FSBHM1J ~]$ ./d.sh
+Enter user name: nimu
+User name is incorrect
+
+
+
+
+Q6)	output:-Enter two numbers:
+			8 6
+			8 is greater than 6
+			
+	output:-Enter two numbers:
+			1 8
+			1 is less than 8
+			
+**************************************************	
+echo "Enter numbers"
+read num1 num2
+if [ "$num1" -gt "$num2" ]; then
+    echo "$num1 is greater than $num2"
+elif [ "$num1" -lt "$num2" ]; then
+    echo "$num1 is less than $num2"
+else
+    echo "$num1 is equal to $num2"
+fi
+
+
+**************************************************				
+			
+[samindi@DESKTOP-FSBHM1J ~]$ vi e.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 e.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./e.sh
+Enter numbers
+8 6
+8 is greater than 6
+[samindi@DESKTOP-FSBHM1J ~]$ ./e.sh
+Enter numbers
+1 8
+1 is less than 8
+
+
+
+
+
+
+Q7)Create simple calculator using "expr" command same as the Question 03
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
