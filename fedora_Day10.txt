@@ -1,0 +1,209 @@
+(Q1)Print multiplication table using for loop
+	1*2 = 2
+	2*2 = 4
+	.......
+	
+------------------------------------------------------------
+for ((i=1;i<=10;i++))
+do
+        echo "$i * 2 = $((i * 2))"
+done
+
+------------------------------------------------------------
+Answer:-
+[samindi@DESKTOP-FSBHM1J ~]$ vi p.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 p.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./p.sh
+1 * 2 = 2
+2 * 2 = 4
+3 * 2 = 6
+4 * 2 = 8
+5 * 2 = 10
+6 * 2 = 12
+7 * 2 = 14
+8 * 2 = 16
+9 * 2 = 18
+10 * 2 = 20
+
+
+
+
+
+(Q2)   *
+      ***
+	 *****
+	*******
+   *********
+    *******
+	 *****
+	  ***
+	   *
+	   
+------------------------------------------------------------	   
+#top half of the diamand	   
+echo "Enter the number of stars: "
+read  stars
+for ((i=1; i<=stars; i++))
+do
+   for ((j=i; j<stars; j++))
+   do
+     echo -n " "10
+   done
+   for ((k=1; k<=((2*i-1)); k++))
+   do
+     echo -n "*"
+   done
+   echo ""
+done   
+#bottom half of the diamond
+for ((i=stars-1; i>=1; i--))
+do
+	for((j=stars;j>i;j--))
+	do
+		echo -n " "
+	done
+		for((k=1;k<=((2*i-1)); k++))
+		do
+			echo -n "*"
+		done
+		echo
+done
+   
+	   
+------------------------------------------------------------
+[samindi@DESKTOP-FSBHM1J ~]$ vi q.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 q.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./q.sh
+Enter the number of stars:
+10
+         *
+        ***
+       *****
+      *******
+     *********
+    ***********
+   *************
+  ***************
+ *****************
+*******************
+ *****************
+  ***************
+   *************
+    ***********
+     *********
+      *******
+       *****
+        ***
+         *
+		
+		
+		
+		
+		
+(Q3)
+	*****
+	*   *
+	*   *
+	*   *
+	*   *
+	*****
+
+------------------------------------------------------------
+
+rows=6
+cols=6
+for ((i=1; i<=rows; i++))
+do
+    for ((j=1; j<=cols; j++))
+    do
+        if [ $i -eq 1 ] || [ $i -eq $rows ] || [ $j -eq 1 ] || [ $j -eq $cols ]; then
+            echo -n "*"
+        else
+            echo -n " "
+        fi
+    done
+    echo ""
+done
+
+------------------------------------------------------------
+Answer:-
+[samindi@DESKTOP-FSBHM1J ~]$ vi r.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 r.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./r.sh
+******
+*    *
+*    *
+*    *
+*    *
+******
+
+
+
+(Q4)Fibonacci Series:
+0 1 1 2 3 5 8 13 21 34
+Sum of the first 10 fibonacci numbers is: 88
+
+------------------------------------------------------------
+a=0
+b=1
+sum=0
+count=10
+
+echo -n "Fibonacci Series: "
+
+for ((i=0; i<count; i++))
+do
+    echo -n "$a "
+    sum=$((sum + a))
+    fn=$((a + b))
+    a=$b
+    b=$fn
+done
+echo ""
+echo "Sum of the first 10 fibonacci numbers is: $sum"
+
+------------------------------------------------------------
+Answer:-
+[samindi@DESKTOP-FSBHM1J ~]$ vi s.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 s.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./s.sh
+Fibonacci Series: 0 1 1 2 3 5 8 13 21 34
+Sum of the first 10 fibonacci numbers is: 88
+
+
+
+
+
+(Q5)Sum of prime numbers between 1 and 100 is: 1060
+
+------------------------------------------------------------
+sum=0
+
+is_prime() {
+    num=$1
+    if [ $num -le 1 ]; then
+        return 1
+    fi
+    for ((i=2; i*i<=num; i++)); do
+        if (( num % i == 0 )); then
+            return 1
+        fi
+    done
+    return 0
+}
+
+for ((n=1; n<=100; n++))
+do
+    if is_prime $n; then
+        sum=$((sum + n))
+    fi
+done
+
+echo "Sum of prime numbers between 1 and 100 is: $sum"
+
+------------------------------------------------------------
+Answer:-
+[samindi@DESKTOP-FSBHM1J ~]$ vi t.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 t.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./t.sh
+Sum of prime numbers between 1 and 100 is: 1060
