@@ -1,0 +1,215 @@
+// Creates a file 'bcd.tsv'
+[samindi@DESKTOP-FSBHM1J ~]$ touch bcd.tsv
+
+// Open the file "bcd.tsv" using the "vi" text editor
+[samindi@DESKTOP-FSBHM1J ~]$ vi bcd.tsv
+[samindi@DESKTOP-FSBHM1J ~]$ more bcd.tsv
+aa      22      55      88
+bb      88      99      66
+cc      12      23      36
+dd      65      54      47
+ee      78      89      90
+ff      01      32      21
+gg      16      65      54
+hh      49      98      87
+ii      77      88      99
+jj      44      55      66
+kk      11      22      33
+ll      14      25      36
+
+// Extracts the tab seperated first column
+
+[samindi@DESKTOP-FSBHM1J ~]$ cut -d$'\t' -f1 bcd.tsv
+aa
+bb
+cc
+dd
+ee
+ff
+gg
+hh
+ii
+jj
+kk
+ll
+
+// Extracts the third column using space as a delimiter
+
+[samindi@DESKTOP-FSBHM1J ~]$ cut -d " " -f3 bcd.tsv
+aa      22      55      88
+bb      88      99      66
+cc      12      23      36
+dd      65      54      47
+ee      78      89      90
+ff      01      32      21
+gg      16      65      54
+hh      49      98      87
+ii      77      88      99
+jj      44      55      66
+kk      11      22      33
+ll      14      25      36
+
+// Displays the first 2 lines of bcd.tsv
+[samindi@DESKTOP-FSBHM1J ~]$ head -n2 bcd.tsv
+aa      22      55      88
+bb      88      99      66
+
+// Displays the last 2 lines of bcd.tsv
+
+[samindi@DESKTOP-FSBHM1J ~]$ tail -n2 bcd.tsv
+kk      11      22      33
+ll      14      25      36
+
+
+[samindi@DESKTOP-FSBHM1J ~]$ cut -d\t -f1 bcd.tsv
+aa      22      55      88
+bb      88      99      66
+cc      12      23      36
+dd      65      54      47
+ee      78      89      90
+ff      01      32      21
+gg      16      65      54
+hh      49      98      87
+ii      77      88      99
+jj      44      55      66
+kk      11      22      33
+ll      14      25      36
+[samindi@DESKTOP-FSBHM1J ~]$ cut -d ' ' -f1 bcd.tsv
+aa      22      55      88
+bb      88      99      66
+cc      12      23      36
+dd      65      54      47
+ee      78      89      90
+ff      01      32      21
+gg      16      65      54
+hh      49      98      87
+ii      77      88      99
+jj      44      55      66
+kk      11      22      33
+ll      14      25      36
+
+// Edit the bcd.tsv file, remove tabs and add spaces between values
+
+[samindi@DESKTOP-FSBHM1J ~]$ vi bcd.tsv
+[samindi@DESKTOP-FSBHM1J ~]$ cut -d ' ' -f1 bcd.tsv
+aa      22      55      88
+bb      88      99      66
+cc      12      23      36
+dd      65      54      47
+ee      78      89      90
+ff      01      32      21
+gg      16      65      54
+hh      49      98      87
+ii      77      88      99
+jj      44      55      66
+kk      11      22      33
+ll      14      25      36
+
+// Extracts the space seperated second column
+
+[samindi@DESKTOP-FSBHM1J ~]$ cut -d ' ' -f2 bcd.tsv
+aa      22      55      88
+bb      88      99      66
+cc      12      23      36
+dd      65      54      47
+ee      78      89      90
+ff      01      32      21
+gg      16      65      54
+hh      49      98      87
+ii      77      88      99
+jj      44      55      66
+kk      11      22      33
+ll      14      25      36
+
+// Display first 10 lines
+[samindi@DESKTOP-FSBHM1J ~]$ head bcd.tsv
+aa      22      55      88
+bb      88      99      66
+cc      12      23      36
+dd      65      54      47
+ee      78      89      90
+ff      01      32      21
+gg      16      65      54
+hh      49      98      87
+ii      77      88      99
+jj      44      55      66
+
+// Display first 8 lines (from head)
+
+[samindi@DESKTOP-FSBHM1J ~]$ head -8 bcd.tsv
+aa      22      55      88
+bb      88      99      66
+cc      12      23      36
+dd      65      54      47
+ee      78      89      90
+ff      01      32      21
+gg      16      65      54
+hh      49      98      87
+
+// Display first line
+
+[samindi@DESKTOP-FSBHM1J ~]$ head -1 bcd.tsv
+aa      22      55      88
+
+// Display last line
+
+[samindi@DESKTOP-FSBHM1J ~]$ tail -1 bcd.tsv
+ll      14      25      36
+
+// Display first 100 lines (from head)
+
+[samindi@DESKTOP-FSBHM1J ~]$ head -100 bcd.tsv
+aa      22      55      88
+bb      88      99      66
+cc      12      23      36
+dd      65      54      47
+ee      78      89      90
+ff      01      32      21
+gg      16      65      54
+hh      49      98      87
+ii      77      88      99
+jj      44      55      66
+kk      11      22      33
+ll      14      25      36
+
+// Extracts the 8th line
+[samindi@DESKTOP-FSBHM1J ~]$ head -n8 bcd.tsv | tail -n1
+hh      49      98      87
+
+// Prints the number of columns (seperated by space)
+[samindi@DESKTOP-FSBHM1J ~]$ awk '{print NF; exit}' bcd.tsv
+4
+
+// Prints the number of columns (seperated by tabs)
+[samindi@DESKTOP-FSBHM1J ~]$ awk -F'\t' '{print NF; exit}' bcd.tsv
+4
+
+// Prints the 3rd column using awk
+[samindi@DESKTOP-FSBHM1J ~]$ awk '{print $3}' bcd.tsv
+55
+99
+23
+54
+89
+32
+65
+98
+88
+55
+22
+25
+
+
+// Count the number of lines
+[samindi@DESKTOP-FSBHM1J ~]$ wc -l bcd.tsv
+12 bcd.tsv
+
+// Extracts the first 10 lines and Search for "dd" in those first 10 lines
+[samindi@DESKTOP-FSBHM1J ~]$ head -n10 bcd.tsv | grep 'dd'
+dd      65      54      47
+
+
+// Extracts the first 7 lines and Search for "88" in those first 10 lines
+[samindi@DESKTOP-FSBHM1J ~]$ head -n7 abc.tsv | grep '88'
+aa 55 99 88
+dd 88 66 11
