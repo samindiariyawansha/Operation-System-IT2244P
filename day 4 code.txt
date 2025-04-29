@@ -1,0 +1,57 @@
+[samindi@DESKTOP-FSBHM1J ~]$ pwd
+/home/samindi
+
+[samindi@DESKTOP-FSBHM1J ~]$ ls
+abc.tsv  new.txt      test.csv   test2.csv
+bcd.tsv  program1.sh  test1.csv  test3.csv
+
+[samindi@DESKTOP-FSBHM1J ~]$ ls -a
+.              .bash_logout   abc.tsv  program1.sh  test2.csv
+..             .bash_profile  bcd.tsv  test.csv     test3.csv
+.bash_history  .bashrc        new.txt  test1.csv
+
+[samindi@DESKTOP-FSBHM1J ~]$ ls -ltr
+total 28
+-rw-r--r-- 1 samindi samindi   0 Mar 25 14:20 new.txt
+-rwxr--r-- 1 samindi samindi  72 Apr  1 22:18 test.csv
+-rw-r--r-- 1 samindi samindi  36 Apr  1 22:21 test1.csv
+-rw-r--r-- 1 samindi samindi  36 Apr  1 22:25 test2.csv
+-rw-r--r-- 1 samindi samindi  36 Apr  1 22:25 test3.csv
+-rw-r--r-- 1 samindi samindi 158 Apr  2 18:59 abc.tsv
+-rw-r--r-- 1 samindi samindi 144 Apr  2 21:04 bcd.tsv
+-rwxrwxrwx 1 samindi samindi  78 Apr  2 22:10 program1.sh
+
+[samindi@DESKTOP-FSBHM1J ~]$ date
+Wed Apr  2 22:16:39 +0530 2025
+
+[samindi@DESKTOP-FSBHM1J ~]$ date +%d
+02
+[samindi@DESKTOP-FSBHM1J ~]$ date +%y
+25
+
+[samindi@DESKTOP-FSBHM1J ~]$ vi program2.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 program2.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./program2.sh
+Who are you?
+sawindi
+number 1
+5
+number 2
+6
+number 3
+7
+Summation 18
+
+
+[samindi@DESKTOP-FSBHM1J ~]$ vi program3.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 program3.sh
+[samindi@DESKTOP-FSBHM1J ~]$  ./program3.sh
+Enter Number 01
+8
+Enter Number 02
+4
+Summation: 12
+Subtraction: 4
+Multiplication: 32
+Division: 2
+[samindi@DESKTOP-FSBHM1J ~]$
