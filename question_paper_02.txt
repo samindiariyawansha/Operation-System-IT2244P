@@ -1,0 +1,114 @@
+Q1)Write a code for small astrology based on your life path number for that get date of birth from user then calculate life path number.(use switch case)
+Example:-
+	Date: 23
+	
+	calculation for life path number
+				a=date%10    3
+				b=date/10    2
+				c=a+based    5
+	  
+	If life path number:
+		1:Lucky
+		2:Carefully do ypour work
+		3:Storger
+		4:Happy
+		5:Can get help
+		6:Doubt
+		7:Sad
+		8:Like
+		9:Courage
+		
+**************************************************			
+echo "Enter your date of birth (DD):"
+read date
+a=$((date % 10))
+b=$((date / 10))
+c=$((a + b))
+if [ $c -ge 10 ]; then
+    c=$((c % 10 + c / 10))
+fi
+echo "Your Life Path Number is: $c"
+case $c in
+    1) echo "Astrology Insight: Lucky" ;;
+    2) echo "Astrology Insight: Carefully do your work" ;;
+    3) echo "Astrology Insight: Stronger" ;;
+    4) echo "Astrology Insight: Happy" ;;
+    5) echo "Astrology Insight: Can get help" ;;
+    6) echo "Astrology Insight: Doubt" ;;
+    7) echo "Astrology Insight: Sad" ;;
+    8) echo "Astrology Insight: Like" ;;
+    9) echo "Astrology Insight: Courage" ;;
+    *) echo "Astrology Insight: Unknown" ;;
+esac
+**************************************************
+		
+[samindi@DESKTOP-FSBHM1J ~]$ vi i.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 i.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./i.sh
+Enter your date of birth (DD):
+29
+Your Life Path Number is: 2
+Astrology Insight: Carefully do your work
+
+
+
+Q2)Give list of numbers then calculate the summation and multiplication using for loop.
+	Example:-
+	  1 2 3 4 5
+		summation = 15
+		multiplication = 120
+		
+**************************************************
+echo "Enter a list of numbers separated by spaces:"
+read -a numbers
+sum=0
+mul=1
+for num in "${numbers[@]}";
+do
+    sum=$((sum + num))
+    mul=$((mul * num))
+done
+echo "Summation = $sum"
+echo "Multiplication = $mul"
+
+**************************************************
+[samindi@DESKTOP-FSBHM1J ~]$ vi j.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 j.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./j.sh
+Enter a list of numbers separated by spaces:
+1 2 3 4 5
+Summation = 15
+Multiplication = 120
+
+
+Q3)Print the integers from 1 to 10 using while loop
+
+**************************************************
+let i=1
+while [ $i -le 10 ];
+do
+	echo $i;
+	i=$(($i+1))
+done
+**************************************************
+
+[samindi@DESKTOP-FSBHM1J ~]$ vi k.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 k.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./k.sh
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+
+
+
+
+		
+		
