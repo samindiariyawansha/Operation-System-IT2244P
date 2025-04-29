@@ -1,0 +1,168 @@
+Q4)Print below patterns using nested loop columns = 7 , rows = 7
+
+i)	*
+	* *
+	* * *
+	* * * *
+	* * * * *
+	* * * * * *
+	* * * * * * *
+
+
+
+ii)	* * * * * * *
+	* * * * * *
+	* * * * *
+	* * * *
+	* * *
+	* *
+	*
+
+
+iii) 1
+	 2 2
+	 3 3 3
+	 4 4 4 4
+	 5 5 5 5 5
+	 6 6 6 6 6 6
+	 
+	 
+iv) 1
+	1 2
+	1 2 3 
+	1 2 3 4 
+	1 2 3 4 5
+	1 2 3 4 5 6
+	
+	
+v)       *
+        * *
+	   * * *	
+	  * * * *
+	 * * * * *
+
+---------------------------------------------------------------
+for((i=1; i<=7;i++))
+do
+	for((j=0; j<i; j++))
+	do
+		echo -n "*"
+	done
+	echo""
+done
+
+
+echo""
+echo""
+
+
+for((i=1;i<=7;i++))
+do
+	for((j=7;j>i;j--))
+	do
+		echo -n "*"
+	done
+	echo ""
+done
+
+
+
+echo""
+echo""
+
+for ((i=1; i<=6; i++))
+do
+   for ((j=1; j<=i; j++))
+   do
+     echo -n "$i "
+   done
+   echo ""
+done
+
+
+
+echo""
+echo""
+
+for ((i=1; i<=7; i++))
+do
+   for ((j=1; j<=i; j++))
+   do
+     echo -n "$j "
+   done
+   echo ""
+done
+
+
+
+echo""
+echo""
+
+rows=5
+for ((i=1; i<=rows; i++))
+do
+   for ((j=i; j<rows; j++))
+   do
+     echo -n " "
+   done
+   for ((k=1; k<=i; k++))
+   do
+     echo -n "* "
+   done
+   echo ""
+done
+
+#############################################################################
+
+[samindi@DESKTOP-FSBHM1J ~]$ vi l.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 l.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./l.sh
+*
+**
+***
+****
+*****
+******
+*******
+
+
+*
+**
+***
+****
+*****
+******
+*******
+
+
+******
+*****
+****
+***
+**
+*
+
+
+
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+6 6 6 6 6 6
+
+
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+1 2 3 4 5 6
+1 2 3 4 5 6 7
+
+
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
