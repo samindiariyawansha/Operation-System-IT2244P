@@ -1,0 +1,76 @@
+(Q1)Fibonacci numbers
+
+----------------------------------------------------
+a=0
+b=1
+echo -n "$a $b "
+for (( i=2; i<10; i++))
+do
+	fib=$((a+b ))
+	echo -n "$fib "
+	a=$b
+	b=$fib
+done
+
+----------------------------------------------------
+Answer:-
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 m.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./m.sh
+0 1 1 2 3 5 8 13 21 34 
+
+
+
+
+
+(Q2)Factorial
+----------------------------------------------------
+fact=1
+num=5
+for (( i=1; i<=num; i++))
+do
+	fact=$((fact*i))
+done
+echo "Factorial $num = $fact"
+
+----------------------------------------------------
+Answer:-
+[samindi@DESKTOP-FSBHM1J ~]$ vi n.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 n.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./n.sh
+Factorial 5 = 120
+
+
+
+
+(Q3)Multiples of 3 between 1 and 50
+
+----------------------------------------------------
+
+let i=3
+while [ $i -le 50 ];
+do
+	echo $i
+	i=$(($i+3))
+done
+
+----------------------------------------------------
+Answer:-
+[samindi@DESKTOP-FSBHM1J ~]$ vi o.sh
+[samindi@DESKTOP-FSBHM1J ~]$ chmod 777 o.sh
+[samindi@DESKTOP-FSBHM1J ~]$ ./o.sh
+3
+6
+9
+12
+15
+18
+21
+24
+27
+30
+33
+36
+39
+42
+45
+48
