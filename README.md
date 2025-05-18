@@ -1,20 +1,2 @@
-
-1. **Pattern 1**:
-   - **Description**: Right-angle triangle with increasing stars.
-   - **Purpose**: Demonstrates printing an increasing star pattern.
-
-2. **Pattern 2**:
-   - **Description**: Inverted right-angle triangle with decreasing stars.
-   - **Purpose**: Shows how to print a decreasing star pattern.
-
-3. **Pattern 3**:
-   - **Description**: Numbers repeating in each row.
-   - **Purpose**: Prints a pattern with repeated numbers.
-
-4. **Pattern 4**:
-   - **Description**: Incrementing numbers in each row.
-   - **Purpose**: Prints a pattern with incrementing numbers.
-
-5. **Pattern 5**:
-   - **Description**: Centered triangle of stars.
-   - **Purpose**: Prints a centered star pattern with spaces.
+![00](https://github.com/user-attachments/assets/569ba7eb-2105-4f74-8178-e7e5870eed7e)
+![CAL](https://github.com/user-attachments/assets/2311a1ae-a74f-4b99-a63b-5d9103b96de7)
