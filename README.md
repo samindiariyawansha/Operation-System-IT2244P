@@ -5,10 +5,6 @@ This script calculates the **LCM** of two numbers (a, b) and the **GCD** of anot
 It demonstrates how to compute the **Least Common Multiple (LCM)** and **Greatest Common Divisor (GCD)** of numbers, which are useful in problems involving divisibility and fractions.# Operation-System-IT2244P
 
 
-Here's a clean and formatted **README** for your latest shell script (Q1\_40.sh) that reads three numbers from the user, finds the **LCM** of the first two, and the **GCD** of the last two:
-
----
-
 # 🧮 Shell Script: LCM and GCD Calculation
 
 ### ✅ **Objective:**
